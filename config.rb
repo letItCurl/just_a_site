@@ -9,9 +9,9 @@ end
 # https://middlemanapp.com/basics/layouts/
 
 # Per-page layout changes
-page '/*.xml', layout: false
-page '/*.json', layout: false
-page '/*.txt', layout: false
+page "/*.xml", layout: false
+page "/*.json", layout: false
+page "/*.txt", layout: false
 
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
@@ -44,3 +44,13 @@ page '/*.txt', layout: false
 #   activate :minify_css
 #   activate :minify_javascript
 # end
+
+configure :development do
+  activate :livereload
+end
+
+activate :blog do |blog|
+  # set options on blog
+  blog.prefix = "blog"
+  blog.permalink = "blog/{year}/{title}.html"
+end
